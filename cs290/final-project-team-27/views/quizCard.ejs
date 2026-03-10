@@ -1,0 +1,12 @@
+<div class="quiz" name = "<%= name %>" subject = "<%= subject %>" questions = "<%= questions %>" num-questions = "<%= questions.length %>">
+    <div class = "quiz-contents">
+        <div class = "quiz-image-container">
+            <img src = "<%= photo %>" alt = "<%= name %>">
+        </div>
+        <div class = "quiz-text-container">
+            <a href="/quizzes/<%= n %>" class="quiz-title">Title: <%= name %></a> 
+            <span class="quiz-subject">Subject: <%= subject %></span> 
+            <span class="quiz-num-questions">Questions: <%= questions.length %></span>
+        </div>
+    </div>
+</div>

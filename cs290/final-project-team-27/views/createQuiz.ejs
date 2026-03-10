@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create Quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Patrick+Hand&display=swap" rel="stylesheet">
+</head>
+<body>
+  <%- include("header") %>    
+  <script src="/createQuiz.js"></script>
+  <script src="/choiceQuestionTemplate.js"></script>
+  <script src="/choiceTemplate.js"></script> <!-- if needed -->
+  <script src="/textQuestionTemplate.js"></script>
+  <link rel="stylesheet" href="/styles.css">
+
+  <h1>Building Quiz: <%= name %></h1>
+
+  <!-- This is to keep track of the quiz information on the clientside and 
+   eventually the server side -->
+  <script>
+    var quizNameFromServer = "<%= name %>";
+    var quizSubjectFromServer = "<%= subject %>";
+    var quizPhotoFromServer = "<%= photo %>";
+  </script>
+
+  <h2>Subject: <%= subject %></h2>
+
+  <div class = "create-quiz-photo-container">
+    <% if (photo) { %>
+      <img src="<%= photo %>" style="max-width: 300px;">
+    <% } %>
+  </div>
+
+  <h2 class = "questions-list-heading">Questions List:</h2>
+  
+  <div class="current-questions-container">
+    <!-- Add finished questions here -->
+  </div>
+
+  <div class="creating-question-container">
+    <!-- Add question being created here -->
+  </div>
+
+  <div class="add-question-container">
+    <div class="question-type-container">
+      <label for="question-type-text" class="question-type-label">Type</label>
+        <div class="question-selector-container">
+          <select id="question-type-select" class="question-type-input" name="filter-subject">
+            <option selected>Multi-choice</option>
+            <option>Single-choice</option>
+            <option>Text</option>
+          </select>
+        </div>  
+    </div>
+
+    <div class="add-question-button">
+      <button type="button" id="add-question-button">Add Question</button>
+    </div>
+        
+  </div>
+
+  <!-- Submit quiz button -->
+  <div class="submit-quiz-container">
+    <button type="button" id="submit-quiz-button">Submit Quiz</button>
+  </div>
+
+</body>
+</html>

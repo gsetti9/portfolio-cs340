@@ -1,0 +1,14 @@
+<div class="choice">
+  <label>Choice <%= index + 1 %>:</label>
+  <input type="text" class="choice-text" placeholder="Enter answer text">
+
+  <% if (type === "Single-choice") { %>
+    <label>Correct?</label>
+    <input type="radio" 
+           name="correct-choice-q<%= questionNumber %>" 
+           class="choice-correct-radio">
+  <% } else if (type === "Multi-choice") { %>
+    <label>Correct?</label>
+    <input type="checkbox" class="choice-correct-checkbox">
+  <% } %>
+</div>

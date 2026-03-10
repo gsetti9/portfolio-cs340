@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "node compiler.js views/questions/textQuestion.ejs static/textQuestionTemplate.js && node compiler.js views/questions/choiceQuestion.ejs static/choiceQuestionTemplate.js && node compiler.js views/questions/choice.ejs static/choiceTemplate.js",
+    "prestart": "cp node_modules/ejs/ejs.min.js static/ && npm run build"
+  }
+}

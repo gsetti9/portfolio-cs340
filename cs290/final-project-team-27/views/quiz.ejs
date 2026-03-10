@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= quiz.name %> | Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/takeQuiz.js"></script>
+  </head>
+
+  <body>
+    <%- include("header") %>
+
+    <main class="quiz-page">
+      <h1><%= quiz.name %></h1>
+      <h2>Subject: <%= quiz.subject %></h2>
+
+      <% if (quiz.photo) { %>
+        <img src="<%= quiz.photo %>" alt="<%= quiz.name %>" style="max-width: 300px; display: block; margin: 20px auto;">
+      <% } %>
+
+      <div id="quiz-container">
+        <div id="quiz-questions">
+          <% quiz.questions.forEach(function(q, i) { %>
+            <% if(q.type == "Text") {%>
+              <div class="question text-question" data-type="Text" data-answer="<%= q.answer %>">
+                <p><strong>Question <%= i + 1 %>:</strong> <%= q.question %></p>
+                <textarea name="answer-<%= i %>" class="question-answer" placeholder="Type your answer here"></textarea>
+              </div>
+            <% } else if ( q.type == "Single-choice") { %>
+              <% 
+                // Find the correct answer index
+                var correctIndex = -1
+                for (var j = 0; j < q.choices.length; j++) {
+                  if (q.choices[j].correct) {
+                    correctIndex = j
+                    break
+                  }
+                }
+              %>
+              <div class="question choice-question" data-type="Single-choice" data-correct-answer="<%= correctIndex %>">
+                <p><strong>Question <%= i + 1 %>:</strong> <%= q.question %></p>
+                <% q.choices.forEach(function(choice, choiceIdx) { %>
+                  <div class="choice">
+                    <input type="radio"
+                      id="q<%= i %>c<%= choiceIdx %>"
+                      name="q<%= i %>"
+                      value="<%= choiceIdx %>">
+                    <label for="q<%= i %>c<%= choiceIdx %>"><%= choice.text %></label>
+                  </div>
+                <% }) %>
+              </div>
+            <% } else if ( q.type == "Multi-choice") { %>
+              <% 
+                // Find all correct answer indices
+                var correctIndices = []
+                for (var j = 0; j < q.choices.length; j++) {
+                  if (q.choices[j].correct) {
+                    correctIndices.push(j)
+                  }
+                }
+              %>
+              <div class="question choice-question" data-type="Multi-choice" data-correct-answers='<%= JSON.stringify(correctIndices) %>'>
+                <p><strong>Question <%= i + 1 %>:</strong> <%= q.question %></p>
+                <% q.choices.forEach(function(choice, choiceIdx) { %>
+                  <div class="choice">
+                    <input type="checkbox"
+                      id="q<%= i %>c<%= choiceIdx %>"
+                      name="q<%= i %>[]"
+                      value="<%= choiceIdx %>">
+                    <label for="q<%= i %>c<%= choiceIdx %>"><%= choice.text %></label>
+                  </div>
+                <% }) %>
+              </div>
+            <% } %>
+          <% }) %>
+        </div>
+
+        <div style="text-align: center; margin: 30px 0;">
+          <button type="button" id="submit-quiz-button">Submit Quiz</button>
+        </div>
+      </div>
+
+      <div id="results-container" class="hidden">
+        <div class="results-box">
+          <h2>Quiz Results</h2>
+          <p id="score-text" class="score-text"></p>
+          <p id="grade-message" class="grade-message"></p>
+          
+          <h3>Details:</h3>
+          <ul id="details-list" class="details-list"></ul>
+
+          <div class="results-buttons">
+            <button type="button" id="retake-quiz-button">Retake Quiz</button>
+            <button type="button" id="home-button">Back to Home</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

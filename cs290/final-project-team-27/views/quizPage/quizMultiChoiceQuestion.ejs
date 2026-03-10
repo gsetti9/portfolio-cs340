@@ -1,0 +1,14 @@
+<div class="question choice-question">
+  <p>Question <%= index + 1 %>: <%= question.question %></p>
+
+  <% question.choices.forEach(function(choice, choiceIdx) { %>
+    <div class="choice">
+      <input type="checkbox"
+        id="q<%= index %>c<%= choiceIdx %>"
+	name="q<%= index %>[]"
+	value="<%= choiceIdx %>">
+
+      <label for="q<%= index %>c<%= choiceIdx %>"><%= choice.text %></label>
+    </div>
+  <% }) %>
+</div>

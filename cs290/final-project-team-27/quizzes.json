@@ -1,0 +1,247 @@
+[
+  {
+    "name": "Cells",
+    "subject": "Science",
+    "photo": "https://www.siena.edu/files/resources/dna.jpg",
+    "questions": [
+      {
+        "type": "Multi-choice",
+        "question": "Which of the following are true about cells?",
+        "choices": [
+          {
+            "text": "Prokaryotes have a nucleus.",
+            "correct": false
+          },
+          {
+            "text": "They are the basic units of life.",
+            "correct": true
+          },
+          {
+            "text": "Eukaryotic cells include bacteria.",
+            "correct": false
+          },
+          {
+            "text": "Mitochondria is the powerhouse of the cell.",
+            "correct": true
+          },
+          {
+            "text": "They don't contain genetic material.",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "type": "Single-choice",
+        "question": "What structure exists in all cells?",
+        "choices": [
+          {
+            "text": "Cell walls",
+            "correct": false
+          },
+          {
+            "text": "Cell membrane",
+            "correct": true
+          },
+          {
+            "text": "Nucleus",
+            "correct": false
+          },
+          {
+            "text": "None of the above",
+            "correct": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Atoms",
+    "subject": "Science",
+    "photo": "https://www.thoughtco.com/thmb/umeBisQXr0xg_q2ubj0Yzo0vUPk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/atom-artwork-160936095-58a8f5683df78c345b8e53be.jpg",
+    "questions": [
+      {
+        "type": "Single-choice",
+        "question": "Are electrons positively, negatively, or neutrally charged?",
+        "choices": [
+          {
+            "text": "Neutrally charged",
+            "correct": false
+          },
+          {
+            "text": "Negatively charged",
+            "correct": true
+          },
+          {
+            "text": "Positively charged",
+            "correct": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Addition",
+    "subject": "Math",
+    "photo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Arithmetic_operations.svg/250px-Arithmetic_operations.svg.png",
+    "questions": [
+      {
+        "type": "Multi-choice",
+        "question": "What is 1 + 1?",
+        "choices": [
+          {
+            "text": "1",
+            "correct": false
+          },
+          {
+            "text": "2",
+            "correct": true
+          },
+          {
+            "text": "3",
+            "correct": false
+          },
+          {
+            "text": "2 - 0",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "type": "Single-choice",
+        "question": "What is 0 + 1?",
+        "choices": [
+          {
+            "text": "1",
+            "correct": true
+          },
+          {
+            "text": "2",
+            "correct": false
+          },
+          {
+            "text": "3",
+            "correct": false
+          },
+          {
+            "text": "4",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "type": "Text",
+        "question": "What is 8 - 2?",
+        "answer": "6"
+      }
+    ]
+  },
+  {
+    "name": "Social and Ethical issues in Computer Science",
+    "subject": "Computer Science",
+    "photo": "https://media.geeksforgeeks.org/wp-content/uploads/20240710085808/desktop.jpg",
+    "questions": [
+      {
+        "type": "Single-choice",
+        "question": "What would a moral realist say about an ethical statement such as “indiscriminate killing is evil”?",
+        "choices": [
+          {
+            "text": "It is an expression of the speaker’s emotions ",
+            "correct": false
+          },
+          {
+            "text": "It is stating a moral truth that exists in the universe",
+            "correct": true
+          },
+          {
+            "text": "It is a moral statement that is established by society’s attitudes ",
+            "correct": false
+          },
+          {
+            "text": "It is a recommendation for moral behavior",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "type": "Single-choice",
+        "question": "Which of the following statements about rule utilitarianism is false?",
+        "choices": [
+          {
+            "text": "Both act and rule utilitarianism suffer from many of the same weaknesses",
+            "correct": false
+          },
+          {
+            "text": "Rule utilitarianism is not susceptible to decisions that favor one’s self-interest",
+            "correct": false
+          },
+          {
+            "text": "Rule utilitarianism can lead to “rule worship“ where people blindly follow rules",
+            "correct": false
+          },
+          {
+            "text": "Rule utilitarianism is equivalent to Kantianism",
+            "correct": true
+          }
+        ]
+      },
+      {
+        "type": "Single-choice",
+        "question": "The quote: “Act in such a way that you treat humanity, whether in your own person or in the person of any other, never merely as a means to an end, but always as an end in itself” is:",
+        "choices": [
+          {
+            "text": "Kant’s first formulation of the categorical imperative",
+            "correct": false
+          },
+          {
+            "text": "Kant’s second formulation of the categorical imperative",
+            "correct": true
+          },
+          {
+            "text": "The Equality Principle from Rawls’ Theory of Justice",
+            "correct": false
+          },
+          {
+            "text": "The fortune in Dr. Wong’s fortune cookie from Panda Express ",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "type": "Single-choice",
+        "question": "Suppose you are in a situation in which two different actions result in two conflicting virtues. What does virtue theory say to do?",
+        "choices": [
+          {
+            "text": "Virtue theory doesn’t say how to resolve the conflict ",
+            "correct": true
+          },
+          {
+            "text": "Pick the action with the virtue that affects more people",
+            "correct": false
+          },
+          {
+            "text": "Pick the action with the virtue that is more developed in you",
+            "correct": false
+          },
+          {
+            "text": "Pick the action with the virtue that is less developed in you",
+            "correct": false
+          }
+        ]
+      },
+      {
+        "type": "Single-choice",
+        "question": "Suppose Andy the Act Utilitarian has to decide how to act. He has a utility function that guides his actions towards the same actions that Vera, the Virtue Theorist would choose to do in every situation. Would Vera consider Andy to be acting ethically, assuming she knows that Andy acts according to Act Utilitarianism?",
+        "choices": [
+          {
+            "text": "Yes",
+            "correct": false
+          },
+          {
+            "text": "No",
+            "correct": true
+          }
+        ]
+      }
+    ]
+  }
+]

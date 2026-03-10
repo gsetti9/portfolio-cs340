@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Flashcard Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Patrick+Hand&display=swap" rel="stylesheet">
+  <script src="/filter.js" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <%- include("header") %>
+    <main class="content">
+      <div class="filter-box">
+        <div class="filter-header">
+          <h2>Filters</h2>
+        </div>
+        <div class= "filter-contents-box">
+          <!-- Search bar -->
+          <div class="search-input-box" id="search-by-text">
+              <label for="filter-text" class="filter-input-label">Text</label>
+              <div class="search-input-element">
+                <input type="text" name="search-bar" id="search-input" placeholder="Search by description">
+              </div>  
+          </div>
+
+          <!--Subject dropdown-->
+            <div class="search-input-box" id="search-by-subject-box">
+              <label for="filter-text" class="filter-input-label">Subject</label>
+              <div class="search-input-element" id="search-by-subject">
+                <select id="filter-subject" class="filter-subject" name="filter-subject">
+                  <option selected value="">Any</option>
+                  <option>Math</option>
+                  <option>English</option>
+                  <option>Science</option>
+                  <option>Social Studies</option>
+                  <option>Language</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <!--#questions-->
+            <div class = "search-input-box">
+              <label for="filter-text" class="filter-input-label"># Questions</label>
+              <div class="search-input-element" id="min-num-questions">
+                <input type="text" name="search-bar" class="search-input" id="filter-min-questions" placeholder="Min">
+              </div>
+              <div class="search-input-element" id="max-num-questions">
+                <input type="text" name="search-bar" class="search-input" id="filter-max-questions" placeholder="Max">
+              </div>
+            </div>
+            <button type="button" id="filter-update-button">Update</button>  
+          </div>  
+        </div>  
+            <!-- Create Quiz button -->
+      <button type="button" id="make-quiz-button">Create a Quiz</button>
+      
+    </main>
+
+    <div id="modal-backdrop" class="hidden"></div>
+
+      <div id="make-quiz-modal" class="hidden">
+        <div class="modal-dialog">
+          <div class="modal-header">
+            <h3>Create a Quiz</h3>
+            <button type="button" id="modal-close" class="modal-hide-button">&times;</button>
+          </div>
+          <div class="modal-body">
+              <!-- Subject to change! -->
+
+            <div class="quiz-input-element">
+              <label for="quiz-name-input">Quiz Name</label>
+              <input type="text" id="quiz-text-input"></input>
+            </div>
+
+            <div class="quiz-input-element">
+              <label for="quiz-photo-input">Photo URL</label>
+              <input type="text" id="quiz-photo-input">
+            </div>
+
+            <div class="quiz-input-element">
+              <label for="quiz-subject-input">Subject</label>
+              <input type="text" id="post-subject-input">
+            </div>
+
+            <div class="modal-footer">
+              <div class="begin-creation-button">
+                <button type="button" id="begin-creation-button">Begin Creation</button>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <p>Quizzes List:</p>
+
+    <%if (quizzes) { %>
+      <section id = "quizzes">
+      <% for (var i = 0; i<quizzes.length; i++) { %>
+         <%- include("quizCard", {
+          name: quizzes[i].name,
+          subject: quizzes[i].subject,
+          questions: quizzes[i].questions,
+          photo: quizzes[i].photo,
+          n: i
+        }) %>
+      <% } %>  
+      </section> 
+    <% } %>
+
+    <script src="/create.js"></script>
+</body>
+
+</html>

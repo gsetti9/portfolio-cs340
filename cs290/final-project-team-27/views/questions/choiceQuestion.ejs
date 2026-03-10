@@ -1,0 +1,16 @@
+<div class="question choice-question" 
+     data-type="<%= type %>" 
+     data-question-number="<%= questionNumber %>">
+
+  <label>Question:</label>
+  <textarea class="question-text" placeholder="Enter your question here"></textarea>
+
+  <label>Number of choices (1-9):</label>
+  <input type="number" class="num-choices" min="1" max="9" value="<%= numChoices || 4 %>">
+
+  <div class="choices-container">
+    <!-- Choices inserted via clientside JS -->
+  </div>
+
+  <button type="button" class="remove-question-btn">Remove Question</button>
+</div>
