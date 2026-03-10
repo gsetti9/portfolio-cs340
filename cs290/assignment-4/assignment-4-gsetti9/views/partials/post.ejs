@@ -1,0 +1,10 @@
+<div class="post" data-price="<%= post.price %>" data-city="<%= post.city %>" data-condition="<%= post.condition %>">
+  <div class="post-contents">
+    <div class="post-image-container">
+      <img src="<%= post.photoUrl %>" alt="<%= post.description %>">
+    </div>
+    <div class="post-info-container">
+      <a href="#" class="post-title"><%= post.description %></a> <span class="post-price">$<%= post.price %></span> <span class="post-city">(<%= post.city %>)</span>
+    </div>
+  </div>
+</div>
